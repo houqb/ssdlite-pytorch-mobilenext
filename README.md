@@ -20,10 +20,10 @@ with synchronized batch normalization. For more implementation details, please r
 
 ### COCO:
 
-| Backbone       | Input Size  |          box AP                  | Parameters | M-Adds | Model Size |  Download |
-| :------------: | :----------:|   :--------------------------:   | :--------: | :-------: | :-------: | :-------: |
-|  MobileNetV2 (SSDLite)         |     320     |          22.3  | 4.5M | 0.8B |  262MB     | [model]
-|  MobileNeXt (SSDLite)         |     320     |          23.3  | 4.5M | 0.8B |  275MB     | [model]   |
+| Backbone       | Input Size  |          box AP                  | Parameters | M-Adds |   Download |
+| :------------: | :----------:|   :--------------------------:   | :--------: | :-------: | :-------: |
+|  MobileNetV2 (SSDLite)         |     320     |          22.3  | 4.5M | 0.8B | [model] |
+|  MobileNeXt (SSDLite)         |     320     |          23.3  | 4.5M | 0.8B | [model]   |
 
 ### PASCAL VOC:
 
