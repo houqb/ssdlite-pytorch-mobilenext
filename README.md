@@ -1,4 +1,4 @@
-# Implementation of SSDLite in PyTorch 1.2
+# Implementation of SSDLite in PyTorch 1.2+
 
 
 This repository implements [SSDLite (Single Shot MultiBox Detector)](https://arxiv.org/abs/1512.02325). The implementation is heavily influenced by the projects [ssd.pytorch](https://github.com/amdegroot/ssd.pytorch), [pytorch-ssd](https://github.com/qfgaohao/pytorch-ssd) and [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark). This repository aims to be the code base for researches based on SSD.
@@ -18,10 +18,10 @@ with synchronized batch normalization.
 
 ### COCO:
 
-| Backbone       | Input Size  |          box AP                  | Model Size |  Download |
-| :------------: | :----------:|   :--------------------------:   | :--------: | :-------: |
-|  MobileNetV2 (SSDLite)         |     320     |          22.3                    |  262MB     | [model](https://github.com/lufficc/SSD/releases/download/1.2/vgg_ssd300_coco_trainval35k.pth)   |
-|  MobileNeXt (SSDLite)         |     320     |          23.3                    |  275MB     | [model](https://github.com/lufficc/SSD/releases/download/1.2/vgg_ssd512_coco_trainval35k.pth)   |
+| Backbone       | Input Size  |          box AP                  | Parameters | M-Adds | Model Size |  Download |
+| :------------: | :----------:|   :--------------------------:   | :--------: | :-------: | :-------: | :-------: |
+|  MobileNetV2 (SSDLite)         |     320     |          22.3  | 4.5M | 0.8B |  262MB     | [model]
+|  MobileNeXt (SSDLite)         |     320     |          23.3  | 4.5M | 0.8B |  275MB     | [model]   |
 
 ### PASCAL VOC:
 
