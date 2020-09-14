@@ -7,7 +7,7 @@ This repository implements [SSDLite (Single Shot MultiBox Detector)](https://arx
 
 - **PyTorch 1.2**: Support PyTorch 1.2 or higher.
 - **Multi-GPU training and inference**: We use `DistributedDataParallel`, you can train or test with arbitrary GPU(s), the training schema will change accordingly.
-- **Modular**: Add your own modules without pain. We abstract `backbone`,`Detector`, `BoxHead`, `BoxPredictor`, etc. You can replace every component with your own code without change the code base. For example, You can add [EfficientNet](https://github.com/lukemelas/EfficientNet-PyTorch) as backbone, just add `efficient_net.py` (ALREADY ADDED) and register it, specific it in the config file, It's done!
+- **Better results than the original TF version**: We achieve an mAP score of 22.3 on COCO, which is slightly better than the original TF version when taking MobileNetV2 as backbone. 
 
 ## Experiment Setup
 
