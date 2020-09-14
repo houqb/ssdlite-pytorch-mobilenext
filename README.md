@@ -56,12 +56,3 @@ If you use this project in your research, please cite this project.
     howpublished = {\url{https://github.com/Andrew-Qibin/ssdlite-pytorch}}
 }
 ```
-
-```text
-@misc{lufficc2018ssd,
-    author = {Congcong Li},
-    title = {{High quality, fast, modular reference implementation of SSD in PyTorch}},
-    year = {2018},
-    howpublished = {\url{https://github.com/lufficc/SSD}}
-}
-```
