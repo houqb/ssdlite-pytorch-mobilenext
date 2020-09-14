@@ -9,11 +9,12 @@ The implementation is heavily influenced by the projects [SSD](https://github.co
 - **PyTorch 1.2**: Support PyTorch 1.2 or higher.
 - **Multi-GPU training and inference**: We use `DistributedDataParallel`, you can train or test with arbitrary GPU(s), the training schema will change accordingly.
 - **Better results than the original TF version**: We achieve an mAP score of 22.3 on COCO, which is slightly better than the original TF version when taking MobileNetV2 as backbone. 
+- **Implementation of SSDLite with FPN**: Support SSDLite with FPN, which highly improves the baseline results.
 
 ## Experiment Setup
 
 During training on COCO, the batch size is set to 256 and the initial learning rate is set to 0.01. We use 8 GPUs to run the experiments
-with synchronized batch normalization.
+with synchronized batch normalization. For more implementation details, please refer to the configs in this project.
 
 ## MODEL ZOO
 
