@@ -13,7 +13,7 @@ The implementation is heavily influenced by the projects [SSD](https://github.co
 
 ## Experiment Setup
 
-During training on COCO, the batch size is set to 256 and the initial learning rate is set to 0.01. We use 8 GPUs to run the experiments
+During training on COCO, the batch size is set to 256 and the initial learning rate is set to 0.01. We use 8 GPUs with 12 GB memory to run the experiments
 with synchronized batch normalization. For more implementation details, please refer to the configs in this project.
 
 ## MODEL ZOO
