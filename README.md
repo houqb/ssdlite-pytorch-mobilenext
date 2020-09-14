@@ -1,7 +1,8 @@
-# Implementation of SSDLite in PyTorch 1.2+
+# Implementation of SSDLite in PyTorch 1.2+ (Object detection code for our [MobileNeXt](https://arxiv.org/pdf/2007.02269.pdf) paper)
 
 
-This repository implements [SSDLite (Single Shot MultiBox Detector)](https://arxiv.org/abs/1512.02325). The implementation is heavily influenced by the projects [ssd.pytorch](https://github.com/amdegroot/ssd.pytorch), [pytorch-ssd](https://github.com/qfgaohao/pytorch-ssd) and [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark). This repository aims to be the code base for researches based on SSD.
+This repository implements [SSDLite](https://arxiv.org/abs/1512.02325), which is presented in [MobileNetV2](https://arxiv.org/pdf/1801.04381.pdf). 
+The implementation is heavily influenced by the projects [SSD](https://github.com/lufficc/SSD).
 
 ## Highlights
 
