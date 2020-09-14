@@ -1,20 +1,11 @@
-# High quality, fast, modular reference implementation of SSD in PyTorch 1.0
+# Implementation of SSDLite in PyTorch 1.2
 
 
-This repository implements [SSD (Single Shot MultiBox Detector)](https://arxiv.org/abs/1512.02325). The implementation is heavily influenced by the projects [ssd.pytorch](https://github.com/amdegroot/ssd.pytorch), [pytorch-ssd](https://github.com/qfgaohao/pytorch-ssd) and [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark). This repository aims to be the code base for researches based on SSD.
-
-<div align="center">
-  <img src="figures/004545.jpg" width="500px" />
-  <p>Example SSD output (vgg_ssd300_voc0712).</p>
-</div>
-
-| Losses        | Learning rate | Metrics |
-| :-----------: |:-------------:| :------:|
-| ![losses](figures/losses.png) | ![lr](figures/lr.png) | ![metric](figures/metrics.png) |
+This repository implements [SSDLite (Single Shot MultiBox Detector)](https://arxiv.org/abs/1512.02325). The implementation is heavily influenced by the projects [ssd.pytorch](https://github.com/amdegroot/ssd.pytorch), [pytorch-ssd](https://github.com/qfgaohao/pytorch-ssd) and [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark). This repository aims to be the code base for researches based on SSD.
 
 ## Highlights
 
-- **PyTorch 1.0**: Support PyTorch 1.0 or higher.
+- **PyTorch 1.2**: Support PyTorch 1.2 or higher.
 - **Multi-GPU training and inference**: We use `DistributedDataParallel`, you can train or test with arbitrary GPU(s), the training schema will change accordingly.
 - **Modular**: Add your own modules without pain. We abstract `backbone`,`Detector`, `BoxHead`, `BoxPredictor`, etc. You can replace every component with your own code without change the code base. For example, You can add [EfficientNet](https://github.com/lukemelas/EfficientNet-PyTorch) as backbone, just add `efficient_net.py` (ALREADY ADDED) and register it, specific it in the config file, It's done!
 - **CPU support for inference**: runs on CPU in inference time.
@@ -26,8 +17,8 @@ This repository implements [SSD (Single Shot MultiBox Detector)](https://arxiv.o
 ## Installation
 ### Requirements
 
-1. Python3
-1. PyTorch 1.0 or higher
+1. Python3.6
+1. PyTorch 1.2 or higher
 1. yacs
 1. [Vizer](https://github.com/lufficc/Vizer)
 1. GCC >= 4.9
