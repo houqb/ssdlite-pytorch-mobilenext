@@ -37,6 +37,25 @@ with synchronized batch normalization.
 
 ## Citations
 If you use this project in your research, please cite this project.
+
+```text
+@inproceedings{daquan2020rethinking,
+  title={Rethinking Bottleneck Structure for Efficient Mobile Network Design},
+  author={Daquan, Zhou and Hou, Qibin and Chen, Yunpeng and Feng, Jiashi and Yan, Shuicheng},
+  booktitle={European conference on computer vision},
+  year={2020}
+}
+```
+
+```text
+@misc{hou2020ssdite-pytorch,
+    author = {Qibin Hou},
+    title = {{Fast Implementation of SSDLite in PyTorch}},
+    year = {2020},
+    howpublished = {\url{https://github.com/Andrew-Qibin/ssdlite-pytorch}}
+}
+```
+
 ```text
 @misc{lufficc2018ssd,
     author = {Congcong Li},
