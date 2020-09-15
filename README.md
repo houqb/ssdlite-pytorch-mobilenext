@@ -13,6 +13,8 @@ The implementation is heavily influenced by the projects [SSD](https://github.co
 
 ## Experiment Setup
 
+Please refer to [INSTALL.md](https://github.com/Andrew-Qibin/ssdlite-pytorch/blob/master/INSTALL.md) for all the information about installation.
+
 For training on COCO, the batch size is set to 256 and the initial learning rate is set to 0.01. We use 8 GPUs with 12 GB memory to run the experiments
 with synchronized batch normalization.
 
