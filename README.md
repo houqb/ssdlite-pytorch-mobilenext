@@ -22,8 +22,8 @@ with synchronized batch normalization. For more implementation details, please r
 
 | Backbone                   | Input Size   |       Box AP     | Model Size | Download  |
 | :------------------------: | :----------: | :--------------: | :--------: | :-------: |
-|  MobileNetV2 (SSDLite)     |     320      |          22.3    | 26M        | [model]   |
-|  MobileNeXt (SSDLite)      |     320      |          23.3    | 26M        | [model]   |
+|  MobileNetV2 (SSDLite)     |     320      |          22.3    | 34M        | [model]   |
+|  MobileNeXt (SSDLite)      |     320      |          23.3    | 36M        | [model]   |
 |  MobileNetV2-FPN (SSDLite) |     320      |          23.5    | 25M        | [model (coming soon)] |
 |  MobileNeXt-FPN (SSDLite)  |     320      |                  |            | [model (coming soon)] |
 
