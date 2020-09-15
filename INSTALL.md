@@ -80,6 +80,8 @@ COCO_ROOT
 ```
 Where `COCO_ROOT` default is `datasets` folder in current project, you can create symlinks to `datasets` or `export COCO_ROOT="/path/to/coco_root"`.
 
+You can also manually add the dataset path in `ssd/config/path_catlog.py`
+
 ### Single GPU training
 
 ```bash

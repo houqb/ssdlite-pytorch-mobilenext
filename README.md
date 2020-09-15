@@ -16,7 +16,7 @@ The implementation is heavily influenced by the projects [SSD](https://github.co
 Please refer to [INSTALL.md](https://github.com/Andrew-Qibin/ssdlite-pytorch/blob/master/INSTALL.md) for all the information about installation.
 
 For training on COCO, the batch size is set to 256 and the initial learning rate is set to 0.01. We use 8 GPUs with 12 GB memory to run the experiments
-with synchronized batch normalization.
+with synchronized batch normalization. You can also use less GPUs as long as the GPU memory is enough. For example, 4 V100 GPUs are also enough for running.
 
 For training on Pascal VOC, the batch size is set to 24 and the initial learning rate is set to 0.001. We use 4 GPUs with 12 GB memory to run the experiments
 with the standard batch normalization.
@@ -28,15 +28,15 @@ For more implementation details, please refer to the configs in this project.
 ### Pretrained Models:
 |   Networks   |     Links    | 
 | :----------: | :----------: |
-|  MobilenetV2 |  [model]() |
-|  MobileNeXt  |  [model]() |
+|  MobilenetV2 |  [model](https://download.pytorch.org/models/mobilenet_v2-b0353104.pth) |
+|  MobileNeXt  |  [model](https://github.com/Andrew-Qibin/ssdlite-pytorch/blob/master/weights/mnext.pth.tar) |
 
 ### COCO:
 
 | Backbone                   | Input Size   |       Box AP     | Model Size | Download  |
 | :------------------------: | :----------: | :--------------: | :--------: | :-------: |
-|  MobileNetV2 (SSDLite)     |     320      |          22.3    | 34M        | [model]   |
-|  MobileNeXt (SSDLite)      |     320      |          23.3    | 36M        | [model]   |
+|  MobileNetV2 (SSDLite)     |     320      |          22.3    | 34M        | [model](https://drive.google.com/file/d/1jKa16d2c7zSrIYzKAVb9PyAQH2ifXCih/view?usp=sharing)   |
+|  MobileNeXt (SSDLite)      |     320      |          23.3    | 36M        | [model](https://drive.google.com/file/d/1GlBU-10YBjGhj9snw9JVU6i__dc9-INY/view?usp=sharing)   |
 |  MobileNetV2-FPN (SSDLite) |     320      |          23.5    | 25M        | [model (coming soon)] |
 |  MobileNeXt-FPN (SSDLite)  |     320      |                  |            | [model (coming soon)] |
 
@@ -46,8 +46,8 @@ For more implementation details, please refer to the configs in this project.
 | :--------------------: | :----------:|   :--------------:   | :--------: | :-------: |
 |  VGG16 (SSD)           |     300     |          77.7        |   201MB    | [model](https://github.com/lufficc/SSD/releases/download/1.2/vgg_ssd300_voc0712.pth)  |
 |  VGG16 (SSDLite)       |     512     |          80.7        |   207MB    | [model](https://github.com/lufficc/SSD/releases/download/1.2/vgg_ssd512_voc0712.pth)  |
-|  MobilenetV2 (SSDLite) |     320     |          71.8        |   26MB     | [model]() |
-|  MobileNeXt (SSDLite)  |     300     |          72.6        |   27MB     | [model]() |
+|  MobilenetV2 (SSDLite) |     320     |          71.8        |   26MB     | [model](https://drive.google.com/file/d/1rWVxlWGeCylH-sz43PKQUlOsWTzxZTnq/view?usp=sharing) |
+|  MobileNeXt (SSDLite)  |     300     |          72.6        |   27MB     | [model](https://drive.google.com/file/d/1s365AwRVdGMGDZrSjMN58qOx7ydmbutx/view?usp=sharing) |
 
 
 
