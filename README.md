@@ -2,7 +2,7 @@
 
 This is the object detection code for our [MobileNeXt](https://arxiv.org/pdf/2007.02269.pdf) paper.
 This repository implements [SSDLite](https://arxiv.org/abs/1512.02325), which is presented in [MobileNetV2](https://arxiv.org/pdf/1801.04381.pdf). 
-The implementation is heavily influenced by the projects [SSD](https://github.com/lufficc/SSD).
+The implementation is heavily influenced by the [SSD](https://github.com/lufficc/SSD) project.
 
 ## Highlights
 
