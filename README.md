@@ -26,7 +26,8 @@ For more implementation details, please refer to the configs in this project.
 ## MODEL ZOO
 
 ### Pretrained Models:
-
+|   Networks   |     Links    | 
+| :----------: | :----------: |
 |  MobilenetV2 |  [model]() |
 |  MobileNeXt  |  [model]() |
 
