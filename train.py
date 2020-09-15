@@ -23,7 +23,9 @@ def train(cfg, args):
     logger = logging.getLogger('SSD.trainer')
     model = build_detection_model(cfg)
     print(model)
-    model = nn.SyncBatchNorm.convert_sync_batchnorm(model)
+
+    if 'coco' in cfg.DATASETS.TRAIN[0]:
+        model = nn.SyncBatchNorm.convert_sync_batchnorm(model)
     
     device = torch.device(cfg.MODEL.DEVICE)
     model.to(device)
