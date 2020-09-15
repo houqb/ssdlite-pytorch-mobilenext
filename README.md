@@ -28,8 +28,8 @@ For more implementation details, please refer to the configs in this project.
 ### Pretrained Models:
 |   Networks   |     Links    | 
 | :----------: | :----------: |
-|  MobilenetV2 |  [model]() |
-|  MobileNeXt  |  [model]() |
+|  MobilenetV2 |  [model ()] |
+|  MobileNeXt  |  [model](https://github.com/Andrew-Qibin/ssdlite-pytorch/blob/master/weights/mnext.pth.tar) |
 
 ### COCO:
 
