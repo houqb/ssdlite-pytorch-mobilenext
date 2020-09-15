@@ -25,6 +25,11 @@ For more implementation details, please refer to the configs in this project.
 
 ## MODEL ZOO
 
+### Pretrained Models:
+
+|  MobilenetV2 |  [model]() |
+|  MobileNeXt  |  [model]() |
+
 ### COCO:
 
 | Backbone                   | Input Size   |       Box AP     | Model Size | Download  |
