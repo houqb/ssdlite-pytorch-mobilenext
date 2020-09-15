@@ -13,8 +13,13 @@ The implementation is heavily influenced by the projects [SSD](https://github.co
 
 ## Experiment Setup
 
-During training on COCO, the batch size is set to 256 and the initial learning rate is set to 0.01. We use 8 GPUs with 12 GB memory to run the experiments
-with synchronized batch normalization. For more implementation details, please refer to the configs in this project.
+For training on COCO, the batch size is set to 256 and the initial learning rate is set to 0.01. We use 8 GPUs with 12 GB memory to run the experiments
+with synchronized batch normalization.
+
+For training on Pascal VOC, the batch size is set to 24 and the initial learning rate is set to 0.001. We use 4 GPUs with 12 GB memory to run the experiments
+with the standard batch normalization.
+
+For more implementation details, please refer to the configs in this project.
 
 ## MODEL ZOO
 
