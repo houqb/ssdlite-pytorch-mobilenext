@@ -1,6 +1,6 @@
-# Implementation of SSDLite in PyTorch 1.2+ (Object detection code for our [MobileNeXt](https://arxiv.org/pdf/2007.02269.pdf) paper)
+# Implementation of SSDLite in PyTorch 1.2+ 
 
-
+This is the object detection code for our [MobileNeXt](https://arxiv.org/pdf/2007.02269.pdf) paper.
 This repository implements [SSDLite](https://arxiv.org/abs/1512.02325), which is presented in [MobileNetV2](https://arxiv.org/pdf/1801.04381.pdf). 
 The implementation is heavily influenced by the projects [SSD](https://github.com/lufficc/SSD).
 
@@ -20,19 +20,19 @@ with synchronized batch normalization. For more implementation details, please r
 
 ### COCO:
 
-| Backbone       | Input Size  |          box AP                  | Parameters | M-Adds |   Download |
-| :------------: | :----------:|   :--------------------------:   | :--------: | :-------: | :-------: |
-|  MobileNetV2 (SSDLite)         |     320     |          22.3  | 4.5M | 0.8B | [model] |
-|  MobileNeXt (SSDLite)         |     320     |          23.3  | 4.5M | 0.8B | [model]   |
+| Backbone               | Input Size   |       box AP     | Parameters | M-Adds    | Download  |
+| :--------------------: | :----------: | :--------------: | :--------: | :-------: | :-------: |
+|  MobileNetV2 (SSDLite) |     320      |          22.3    | 4.5M       | 0.8B      | [model]   |
+|  MobileNeXt (SSDLite)  |     320      |          23.3    | 4.5M       | 0.8B      | [model]   |
 
 ### PASCAL VOC:
 
-| Backbone         | Input Size  |          mAP                     | Model Size | Download  |
-| :--------------: | :----------:|   :--------------------------:   | :--------: | :-------: |
-|  VGG16           |     300     |          77.7                    |   201MB    | [model](https://github.com/lufficc/SSD/releases/download/1.2/vgg_ssd300_voc0712.pth)  |
-|  VGG16           |     512     |          80.7                    |   207MB    | [model](https://github.com/lufficc/SSD/releases/download/1.2/vgg_ssd512_voc0712.pth)  |
-|  Mobilenet V2    |     320     |          68.8                    |   25.5MB   | [model](https://github.com/lufficc/SSD/releases/download/1.2/mobilenet_v2_ssd320_voc0712.pth) |
-|  EfficientNet-B3 |     300     |          73.9                    |   97.1MB   | [model](https://github.com/lufficc/SSD/releases/download/1.2/efficient_net_b3_ssd300_voc0712.pth) |
+| Backbone               | Input Size  |          mAP         | Model Size | Download  |
+| :--------------------: | :----------:|   :--------------:   | :--------: | :-------: |
+|  VGG16 (SSD)           |     300     |          77.7        |   201MB    | [model](https://github.com/lufficc/SSD/releases/download/1.2/vgg_ssd300_voc0712.pth)  |
+|  VGG16 (SSDLite)       |     512     |          80.7        |   207MB    | [model](https://github.com/lufficc/SSD/releases/download/1.2/vgg_ssd512_voc0712.pth)  |
+|  MobilenetV2 (SSDLite) |     320     |          71.8        |   26MB     | [model]() |
+|  MobileNeXt (SSDLite)  |     300     |          72.6        |   27MB     | [model]() |
 
 
 
