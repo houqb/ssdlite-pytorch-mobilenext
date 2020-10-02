@@ -47,7 +47,7 @@ For more implementation details, please refer to the configs in this project.
 |  VGG16 (SSD)           |     300     |          77.7        |   201MB    | [model](https://github.com/lufficc/SSD/releases/download/1.2/vgg_ssd300_voc0712.pth)  |
 |  VGG16 (SSDLite)       |     512     |          80.7        |   207MB    | [model](https://github.com/lufficc/SSD/releases/download/1.2/vgg_ssd512_voc0712.pth)  |
 |  MobilenetV2 (SSDLite) |     320     |          71.8        |   26MB     | [model](https://drive.google.com/file/d/1rWVxlWGeCylH-sz43PKQUlOsWTzxZTnq/view?usp=sharing) |
-|  MobileNeXt (SSDLite)  |     300     |          72.6        |   27MB     | [model](https://drive.google.com/file/d/1s365AwRVdGMGDZrSjMN58qOx7ydmbutx/view?usp=sharing) |
+|  MobileNeXt (SSDLite)  |     320     |          72.6        |   27MB     | [model](https://drive.google.com/file/d/1s365AwRVdGMGDZrSjMN58qOx7ydmbutx/view?usp=sharing) |
 
 
 
