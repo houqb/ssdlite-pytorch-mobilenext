@@ -27,14 +27,6 @@ cd cocoapi/PythonAPI
 python setup.py build_ext install
 ```
 
-### Build
-If your torchvision >= 0.3.0, nms build is not needed! We also provide a python-like nms, but is very slower than build-version.
-```bash
-# For faster inference you need to build nms, this is needed when evaluating. Only training doesn't need this.
-cd ext
-python build.py build_ext develop
-```
-
 ## Train
 
 ### Setting Up Datasets
