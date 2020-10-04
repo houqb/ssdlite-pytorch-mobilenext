@@ -1,8 +1,6 @@
 import torch
-
 from ssd.structures.container import Container
 from ssd.utils.nms import batched_nms
-
 
 class PostProcessor:
     def __init__(self, cfg):
@@ -11,6 +9,7 @@ class PostProcessor:
         self.width = cfg.INPUT.IMAGE_SIZE
         self.height = cfg.INPUT.IMAGE_SIZE
         self.cls_thresh = 0.5
+        self.cls_loss = cfg.MODEL.BOX_HEAD.LOSS
 
     def __call__(self, detections):
         batches_scores, batches_boxes = detections
@@ -27,16 +26,15 @@ class PostProcessor:
             labels = labels.view(1, num_classes).expand_as(scores)
 
             # remove predictions with the background label
-            # boxes = boxes[:, 1:]
-            # scores = scores[:, 1:]
-            # labels = labels[:, 1:]
+            if self.cls_loss != 'FocalLoss':
+                boxes = boxes[:, 1:]
+                scores = scores[:, 1:]
+                labels = labels[:, 1:]
 
             # batch everything, by making every class prediction be a separate instance
             boxes = boxes.reshape(-1, 4)
             scores = scores.reshape(-1)
             labels = labels.reshape(-1)
-
-            # print(torch.max(scores))
 
             # remove low scoring boxes
             indices = torch.nonzero(scores > self.cfg.TEST.CONFIDENCE_THRESHOLD).squeeze(1)
@@ -48,10 +46,15 @@ class PostProcessor:
             keep = batched_nms(boxes, scores, labels, self.cfg.TEST.NMS_THRESHOLD)
             # keep only topk scoring predictions
             keep = keep[:self.cfg.TEST.MAX_PER_IMAGE]
-            boxes, scores, labels = boxes[keep], scores[keep], labels[keep] + 1
+
+            if self.cls_loss == 'FocalLoss':
+                boxes, scores, labels = boxes[keep], scores[keep], labels[keep] + 1
+            else:
+                boxes, scores, labels = boxes[keep], scores[keep], labels[keep]
 
             container = Container(boxes=boxes, labels=labels, scores=scores)
             container.img_width = self.width
             container.img_height = self.height
             results.append(container)
+            
         return results

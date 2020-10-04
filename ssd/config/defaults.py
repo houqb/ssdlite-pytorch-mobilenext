@@ -39,6 +39,7 @@ _C.MODEL.PRIORS.CLIP = True
 # Box Head
 # -----------------------------------------------------------------------------
 _C.MODEL.BOX_HEAD = CN()
+_C.MODEL.BOX_HEAD.LOSS = 'MultiBoxLoss'
 _C.MODEL.BOX_HEAD.NAME = 'SSDBoxHead'
 _C.MODEL.BOX_HEAD.PREDICTOR = 'SSDBoxPredictor'
 
@@ -82,13 +83,14 @@ _C.SOLVER.MOMENTUM = 0.9
 _C.SOLVER.WEIGHT_DECAY = 5e-4
 _C.SOLVER.WARMUP_FACTOR = 1.0 / 3
 _C.SOLVER.WARMUP_ITERS = 500
+_C.SOLVER.LR_SCHEDULE = 'WarmupMultiStepLR'
 
 # ---------------------------------------------------------------------------- #
 # Specific test options
 # ---------------------------------------------------------------------------- #
 _C.TEST = CN()
-_C.TEST.NMS_THRESHOLD = 0.6
-_C.TEST.CONFIDENCE_THRESHOLD = 0.5
+_C.TEST.NMS_THRESHOLD = 0.45 #0.5
+_C.TEST.CONFIDENCE_THRESHOLD = 0.01   #0.5
 _C.TEST.MAX_PER_CLASS = -1
 _C.TEST.MAX_PER_IMAGE = 100
 _C.TEST.BATCH_SIZE = 10

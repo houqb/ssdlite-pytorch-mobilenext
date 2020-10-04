@@ -2,9 +2,10 @@ MODEL:
   NUM_CLASSES: 21
   BOX_HEAD:
     PREDICTOR: 'SSDLiteBoxPredictor'
+    LOSS: 'MultiBoxLoss'
   BACKBONE:
     NAME: 'mobilenext'
-    OUT_CHANNELS: (576, 1280, 512, 256, 256, 64)
+    OUT_CHANNELS: (576, 1280, 512, 256, 256, 128)
   PRIORS:
     FEATURE_MAPS: [20, 10, 5, 3, 2, 1]
     STRIDES: [16, 32, 64, 120, 160, 320]

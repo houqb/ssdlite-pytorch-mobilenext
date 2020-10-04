@@ -14,18 +14,17 @@ class BoxPredictor(nn.Module):
         self.reg_headers = nn.ModuleList()
         for level, (boxes_per_location, out_channels) in enumerate(zip(cfg.MODEL.PRIORS.BOXES_PER_LOCATION, cfg.MODEL.BACKBONE.OUT_CHANNELS)):
             cls_head = self.cls_block(level, out_channels, boxes_per_location)
-            # cls_head.conv[-1].apply(self.initialize_prior)
             self.cls_headers.append(cls_head)
 
             reg_head = self.reg_block(level, out_channels, boxes_per_location)
-            # reg_head.conv[-1].apply(self.initialize_prior)
             self.reg_headers.append(reg_head)
         self.reset_parameters()
 
-        for cls_head in self.cls_headers:
-            for m in cls_head.modules():
-                if isinstance(m, nn.Conv2d):
-                    m.apply(self.initialize_prior)
+        if self.cfg.MODEL.BOX_HEAD.LOSS == 'FocalLoss':
+            for cls_head in self.cls_headers:
+                for m in cls_head.modules():
+                    if isinstance(m, nn.Conv2d):
+                        m.apply(self.initialize_prior)
 
     def cls_block(self, level, out_channels, boxes_per_location):
         raise NotImplementedError
@@ -34,13 +33,10 @@ class BoxPredictor(nn.Module):
         raise NotImplementedError
 
     def reset_parameters(self):
-        # pi = 0.01
-        # b = - math.log((1 - pi) / pi)
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
                 nn.init.xavier_uniform_(m.weight)
                 nn.init.zeros_(m.bias)
-                # nn.init.constant_(m.bias, b)
     
     def initialize_prior(self, layer):
         pi = 0.01

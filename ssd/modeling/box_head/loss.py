@@ -120,7 +120,6 @@ class FocalLoss(nn.Module):
 
     # def forward(self, logits, label):
     def forward(self, confidence, predicted_locations, labels, gt_locations):
-        # print(confidence.size(), predicted_locations.size(), labels.size(), gt_locations.size())
         num_classes = confidence.size(-1)
         confidence = confidence.view(-1, confidence.size(-1))
         labels = labels.view(-1)
@@ -175,7 +174,6 @@ class FocalLossV1(nn.Module):
 class MultiBoxLoss(nn.Module):
     def __init__(self, neg_pos_ratio):
         """Implement SSD MultiBox Loss.
-
         Basically, MultiBox loss combines classification loss
          and Smooth L1 regression loss.
         """
@@ -184,7 +182,6 @@ class MultiBoxLoss(nn.Module):
 
     def forward(self, confidence, predicted_locations, labels, gt_locations):
         """Compute classification loss and smooth l1 loss.
-
         Args:
             confidence (batch_size, num_priors, num_classes): class predictions.
             predicted_locations (batch_size, num_priors, 4): predicted locations.

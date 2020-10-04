@@ -2,6 +2,7 @@ MODEL:
   NUM_CLASSES: 81
   BOX_HEAD:
     PREDICTOR: 'SSDLiteBoxPredictor'
+    LOSS: "FocalLoss" 
   BACKBONE:
     NAME: 'mobilenext'
     OUT_CHANNELS: (576, 1280, 512, 256, 256, 128)
@@ -19,13 +20,13 @@ DATASETS:
   TEST: ("coco_2017_val", )
 SOLVER:
   MAX_ITER: 1600000
-  LR_STEPS: [280000, 360000]
   GAMMA: 0.1
   BATCH_SIZE: 32
   LR: 1e-2
   WEIGHT_DECAY: 4e-5
+  LR_SCHEDULE: 'WarmupCosLR'
 TEST:
   CONFIDENCE_THRESHOLD: 0.05
   NMS_THRESHOLD: 0.5
 
-OUTPUT_DIR: 'outputs/mobilenext_coco_ssdlite_2'
+OUTPUT_DIR: 'outputs/mobilenext_coco_ssdlite'

@@ -66,7 +66,6 @@ def inference(model, data_loader, dataset_name, device, output_folder=None, use_
         torch.save(predictions, predictions_path)
     return evaluate(dataset=dataset, predictions=predictions, output_dir=output_folder, **kwargs)
 
-
 @torch.no_grad()
 def do_evaluation(cfg, model, distributed, **kwargs):
     if isinstance(model, torch.nn.parallel.DistributedDataParallel):

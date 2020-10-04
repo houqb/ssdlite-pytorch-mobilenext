@@ -15,8 +15,12 @@ class SSDBoxHead(nn.Module):
         super().__init__()
         self.cfg = cfg
         self.predictor = make_box_predictor(cfg)
-        # self.loss_evaluator = MultiBoxLoss(neg_pos_ratio=cfg.MODEL.NEG_POS_RATIO)
-        self.loss_evaluator = FocalLoss(0.25, 2)
+        # 
+        if self.cfg.MODEL.BOX_HEAD.LOSS == 'FocalLoss':
+            self.loss_evaluator = FocalLoss(0.25, 2)
+        else: # By default, we use MultiBoxLoss
+            self.loss_evaluator = MultiBoxLoss(neg_pos_ratio=cfg.MODEL.NEG_POS_RATIO)
+
         self.post_processor = PostProcessor(cfg)
         self.priors = None
 
@@ -40,11 +44,16 @@ class SSDBoxHead(nn.Module):
     def _forward_test(self, cls_logits, bbox_pred):
         if self.priors is None:
             self.priors = PriorBox(self.cfg)().to(bbox_pred.device)
-        # scores = F.softmax(cls_logits, dim=2)
-        scores = cls_logits.sigmoid()
+        # 
+        if self.cfg.MODEL.BOX_HEAD.LOSS == 'FocalLoss':
+            scores = cls_logits.sigmoid()
+        else:
+            scores = F.softmax(cls_logits, dim=2)
+
         boxes = box_utils.convert_locations_to_boxes(
             bbox_pred, self.priors, self.cfg.MODEL.CENTER_VARIANCE, self.cfg.MODEL.SIZE_VARIANCE
         )
+        
         boxes = box_utils.center_form_to_corner_form(boxes)
         detections = (scores, boxes)
         detections = self.post_processor(detections)
