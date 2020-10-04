@@ -16,7 +16,8 @@ The implementation is heavily influenced by the [SSD](https://github.com/lufficc
 Please refer to [INSTALL.md](https://github.com/Andrew-Qibin/ssdlite-pytorch/blob/master/INSTALL.md) for all the information about installation.
 
 For training on COCO, the batch size is set to 256 and the initial learning rate is set to 0.01. We use 8 GPUs with 12 GB memory to run the experiments
-with synchronized batch normalization. You can also use less GPUs as long as the GPU memory is enough. For example, 4 V100 GPUs are also enough for running.
+with synchronized batch normalization (important). You can also use less GPUs as long as the GPU memory is enough but make sure that the batch size is 256.
+For example, 4 V100 GPUs are also enough for running.
 
 For training on Pascal VOC, the batch size is set to 24 and the initial learning rate is set to 0.001. We use 4 GPUs with 12 GB memory to run the experiments
 with the standard batch normalization.
