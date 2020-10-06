@@ -11,8 +11,8 @@
 ### Step-by-step installation
 
 ```bash
-git clone https://github.com/lufficc/SSD.git
-cd SSD
+git clone https://github.com/Andrew-Qibin/ssdlite-pytorch-mobilenext.git
+cd ssdlite-pytorch-mobilenext
 #Required packages
 pip install torch torchvision yacs tqdm opencv-python vizer
 
