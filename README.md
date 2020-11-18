@@ -38,8 +38,6 @@ For more implementation details, please refer to the configs in this project.
 | :------------------------: | :----------: | :--------------: | :--------: | :-------: |
 |  MobileNetV2 (SSDLite)     |     320      |          22.3    | 34M        | [model](https://drive.google.com/file/d/1jKa16d2c7zSrIYzKAVb9PyAQH2ifXCih/view?usp=sharing)   |
 |  MobileNeXt (SSDLite)      |     320      |          23.3    | 36M        | [model](https://drive.google.com/file/d/1GlBU-10YBjGhj9snw9JVU6i__dc9-INY/view?usp=sharing)   |
-|  MobileNetV2-FPN (SSDLite) |     320      |          23.5    | 25M        | [model (coming soon)] |
-|  MobileNeXt-FPN (SSDLite)  |     320      |                  |            | [model (coming soon)] |
 
 ### PASCAL VOC:
 
